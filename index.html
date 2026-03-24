@@ -1,0 +1,2605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartPayPlatform</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+scroll-behavior:smooth;
+}
+
+/* COLORS */
+
+:root{
+--primary:#4F46E5;
+--secondary:#7C3AED;
+--accent:#EC4899;
+--text:#0F172A;
+--bg:#F8FAFC;
+}
+
+/* HERO */
+
+.hero{
+padding:160px 8%;
+background:var(--bg);
+}
+
+.hero-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:44px;
+color:var(--text);
+margin-bottom:20px;
+}
+
+.hero p{
+color:#555;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--primary);
+color:white;
+}
+
+.btn-secondary{
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+.hero img{
+width:100%;
+}
+
+/* PLATFORM */
+
+.platform{
+padding:120px 8%;
+background:white;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:10px;
+}
+
+.section-sub{
+text-align:center;
+color:#666;
+margin-bottom:50px;
+}
+
+.platform-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.platform-card{
+background:#f9fafb;
+padding:25px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.platform-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:contain;
+margin-bottom:15px;
+}
+
+/* PROCESS */
+
+.process{
+padding:120px 8%;
+background:#f9fafb;
+}
+
+.process-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+text-align:center;
+}
+
+.process img{
+width:100%;
+height:150px;
+object-fit:contain;
+margin-bottom:10px;
+}
+
+/* PRICING */
+
+.pricing{
+padding:120px 8%;
+background:white;
+}
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.price-card{
+border:1px solid #eee;
+padding:35px;
+border-radius:10px;
+text-align:center;
+}
+
+.price-card h3{
+margin-bottom:10px;
+}
+
+.price-card ul{
+list-style:none;
+margin:20px 0;
+}
+
+.price-card li{
+margin:8px 0;
+color:#555;
+}
+
+/* FAQ */
+
+.faq{
+padding:120px 8%;
+background:black;
+color:white;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+border-bottom:1px solid #333;
+padding:18px 0;
+}
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+color:#ccc;
+margin-top:8px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:120px 8%;
+background:white;
+}
+
+.contact-container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#111;
+color:#aaa;
+padding:20px;
+text-align:center;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+padding:20px;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero-container,
+.platform-grid,
+.process-grid,
+.pricing-grid,
+.contact-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">SmartPayPlatform</div>
+
+<div class="nav-links" id="navLinks">
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#process">How It Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+</div>
+
+</header>
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">SmartPayPlatform</div>
+
+<nav id="navMenu">
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#process">Process</a>
+<a href="#platform">Platform</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</header>
+
+
+
+<style>
+
+/* NAVBAR */
+
+.navbar{
+width:100%;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+padding:11px 8%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+font-family:'Segoe UI',sans-serif;
+box-shadow:0 3px 15px rgba(0,0,0,0.15);
+}
+
+/* CONTAINER */
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+/* LOGO */
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:white;
+}
+
+/* NAV LINKS */
+
+#navMenu{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+/* LINKS */
+
+#navMenu a{
+text-decoration:none;
+color:white;
+font-size:15px;
+font-weight:500;
+position:relative;
+}
+
+/* HOVER UNDERLINE */
+
+#navMenu a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:white;
+transition:0.3s;
+}
+
+#navMenu a:hover::after{
+width:100%;
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.menu-toggle span{
+width:25px;
+height:3px;
+background:white;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+#navMenu{
+position:absolute;
+top:70px;
+left:0;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+flex-direction:column;
+padding:25px 0;
+gap:20px;
+display:none;
+}
+
+#navMenu.active{
+display:flex;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+}
+
+</style>
+
+
+
+<script>
+
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+
+/* OPEN CLOSE MENU */
+
+toggle.addEventListener("click",()=>{
+menu.classList.toggle("active");
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+
+document.querySelectorAll("#navMenu a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+menu.classList.remove("active");
+
+});
+
+});
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+anchor.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+<section class="hero-section" id="home"> 
+
+<div class="hero-container">
+
+<!-- LEFT TEXT -->
+
+<div class="hero-left">
+
+<h1>AI-Powered Fraud Detection & Payment Intelligence Platform</h1>
+
+<div class="hero-divider"></div>
+
+<p class="hero-text">
+SmartPayPlatform is an AI-driven fraud detection and payment optimisation
+solution built for fintech companies, payment service providers, and
+high-volume digital businesses.
+
+The platform enables real-time transaction monitoring, predictive fraud
+scoring before authorisation, and automated compliance reporting
+helping businesses reduce fraud risk, improve decision-making, and
+operate with confidence at scale.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#platform" class="btn-primary">Explore Platform</a>
+
+<a href="#contact" class="btn-secondary">Request Demo</a>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT IMAGE -->
+
+<div class="hero-right">
+
+<img src="sm.png" alt="SmartPayPlatform Dashboard">
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* HERO SECTION */
+
+.hero-section{
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.hero-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+/* LEFT */
+
+.hero-left h1{
+font-size:46px;
+color:#033E3E;
+margin-bottom:10px;
+line-height:1.2;
+}
+
+/* DIVIDER */
+
+.hero-divider{
+width:80px;
+height:4px;
+background:#008080;
+margin:15px 0 20px;
+border-radius:3px;
+}
+
+/* TEXT */
+
+.hero-text{
+color:#3C565B;
+font-size:17px;
+line-height:1.7;
+margin-bottom:30px;
+max-width:540px;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+/* PRIMARY BUTTON */
+
+.btn-primary{
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+
+color:white;
+padding:13px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-primary:hover{
+background:#045F5F;
+transform:translateY(-2px);
+}
+
+/* SECONDARY BUTTON */
+
+.btn-secondary{
+border:2px solid #008080;
+color:#008080;
+padding:13px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-secondary:hover{
+background:#008080;
+color:white;
+}
+
+/* IMAGE */
+
+.hero-right img{
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-section{
+padding:80px 6%;
+}
+
+.hero-container{
+grid-template-columns:1fr;
+gap:35px;
+text-align:center;
+}
+
+.hero-left h1{
+font-size:32px;
+}
+
+.hero-divider{
+margin:15px auto 20px;
+}
+
+.hero-text{
+margin:auto;
+font-size:16px;
+}
+
+.hero-buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.hero-right{
+margin-top:20px;
+}
+
+}
+
+</style>
+
+
+<script>
+
+/* SMOOTH SCROLL */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+anchor.addEventListener("click", function(e) {
+
+e.preventDefault();
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+</script>
+<section class="about-section" id="about"> 
+
+<div class="about-container">
+
+<!-- LEFT CONTENT -->
+
+<div class="about-left">
+
+<h2>About SmartPayPlatform</h2>
+
+<div class="about-divider"></div>
+
+<p>
+SmartPayPlatform is an AI-driven fraud detection and payment optimisation
+platform built for fintech companies, payment service providers, and
+high-volume digital businesses. It transforms traditional fraud prevention
+into a real-time, intelligent decision system that identifies risk before
+transactions are completed.
+</p>
+
+<p>
+By combining machine learning, behavioural analytics, and automated workflows,
+SmartPayPlatform enables organizations to reduce fraud losses, improve
+operational efficiency, and maintain compliance with financial regulations
+such as FCA, PSD2, and GDPR — without requiring complex infrastructure changes.
+</p>
+
+<div class="about-features">
+
+<div class="feature">Real-Time Fraud Monitoring</div>
+<div class="feature">Predictive Risk Scoring</div>
+<div class="feature">Multi-PSP Integration</div>
+<div class="feature">Automated Compliance Reporting</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="about-right">
+
+<div class="founder-box">
+
+<h3 class="founder-title">Founder</h3>
+
+<div class="founder-divider"></div>
+
+<p>
+<strong>Abhishek Sanghani</strong> founded SmartPayPlatform with a
+vision to make advanced fraud detection accessible to fintech
+companies and digital businesses operating at scale.
+</p>
+
+<p>
+The platform is designed to bridge the gap between complex
+enterprise fraud systems and lightweight solutions by delivering
+predictive intelligence, operational automation, and regulatory
+alignment in a single SaaS platform.
+</p>
+
+<p>
+SmartPayPlatform focuses on enabling businesses to detect fraud
+before financial damage occurs, improve transaction trust, and
+build scalable payment infrastructure with confidence.
+</p>
+
+<a href="#" class="linkedin-btn">LinkedIn</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.about-section{
+padding:140px 8%;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.about-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+/* LEFT */
+
+.about-left h2{
+font-size:42px;
+margin-bottom:10px;
+color:white;
+}
+
+/* DIVIDER */
+
+.about-divider{
+width:80px;
+height:4px;
+background:white;
+margin-bottom:25px;
+border-radius:3px;
+}
+
+.about-left p{
+color:#E6FFFF;
+line-height:1.8;
+margin-bottom:20px;
+font-size:16px;
+max-width:520px;
+}
+
+/* FEATURES */
+
+.about-features{
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.feature{
+background:white;
+color:#033E3E;
+padding:10px 14px;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+}
+
+/* FOUNDER BOX */
+
+.founder-box{
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 12px 35px rgba(0,0,0,0.2);
+}
+
+.founder-title{
+margin-bottom:5px;
+color:#033E3E;
+}
+
+/* DIVIDER */
+
+.founder-divider{
+width:60px;
+height:3px;
+background:#008080;
+margin-bottom:15px;
+border-radius:2px;
+}
+
+.founder-box p{
+color:#555;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+/* BUTTON */
+
+.linkedin-btn{
+display:inline-block;
+padding:10px 18px;
+background:#008080;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+}
+
+.linkedin-btn:hover{
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.about-section{
+padding:90px 6%;
+}
+
+.about-container{
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+.about-left h2{
+font-size:32px;
+}
+
+.about-left p{
+margin:auto;
+font-size:15px;
+max-width:100%;
+}
+
+.about-features{
+grid-template-columns:1fr;
+max-width:320px;
+margin:auto;
+}
+
+.founder-box{
+padding:25px;
+}
+
+.founder-divider{
+margin:12px auto 18px auto;
+}
+
+}
+
+</style>
+<section class="process-section" id="process">
+
+<div class="process-container">
+
+<h2 class="process-title">How SmartPayPlatform Works</h2>
+
+<div class="process-divider"></div>
+
+<p class="process-sub">
+SmartPayPlatform transforms traditional fraud detection into a real-time,
+AI-driven decision system that prevents fraud before transactions are completed.
+</p>
+
+
+<div class="process-grid">
+
+<!-- STEP 1 -->
+<div class="process-card">
+
+<img src="sm1.png" class="process-img">
+
+<div class="step">01</div>
+
+<h3>System Integration</h3>
+
+<p>
+SmartPayPlatform connects securely with payment gateways,
+PSPs, and financial systems via APIs, enabling real-time
+access to transaction data across multiple payment channels.
+</p>
+
+</div>
+
+
+<!-- STEP 2 -->
+<div class="process-card">
+
+<img src="sm2.png" class="process-img">
+
+<div class="step">02</div>
+
+<h3>Real-Time Transaction Analysis</h3>
+
+<p>
+Every transaction is analyzed instantly using machine learning
+models that evaluate behavioural patterns, device data, and
+historical activity to identify anomalies.
+</p>
+
+</div>
+
+
+<!-- STEP 3 -->
+<div class="process-card">
+
+<img src="sm3.png" class="process-img">
+
+<div class="step">03</div>
+
+<h3>Predictive Fraud Decisioning</h3>
+
+<p>
+Each transaction is assigned a fraud risk score before
+authorisation, enabling businesses to approve, block,
+or trigger additional verification in real time.
+</p>
+
+</div>
+
+
+<!-- STEP 4 -->
+<div class="process-card">
+
+<img src="sm4.png" class="process-img">
+
+<div class="step">04</div>
+
+<h3>Automation & Compliance Reporting</h3>
+
+<p>
+Fraud workflows are automated and all actions are logged into
+audit-ready reports aligned with FCA, PSD2, and GDPR,
+ensuring compliance and operational transparency.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.process-section{
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+}
+
+/* CONTAINER */
+
+.process-container{
+max-width:1200px;
+margin:auto;
+}
+
+/* TITLE */
+
+.process-title{
+font-size:38px;
+color:#033E3E;
+margin-bottom:10px;
+}
+
+/* DIVIDER */
+
+.process-divider{
+width:90px;
+height:4px;
+background:#008080;
+margin:10px auto 20px;
+border-radius:3px;
+}
+
+/* SUBTEXT */
+
+.process-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+color:#3C565B;
+line-height:1.7;
+}
+
+/* GRID */
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.process-card{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid #e6e6e6;
+border-top:4px solid #008080;
+text-align:left;
+transition:0.35s;
+position:relative;
+}
+
+.process-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGE */
+
+.process-img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* STEP */
+
+.step{
+display:inline-block;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+color:white;
+font-size:13px;
+font-weight:700;
+padding:6px 14px;
+border-radius:4px;
+margin-bottom:12px;
+}
+
+/* TITLE */
+
+.process-card h3{
+margin-bottom:10px;
+color:#033E3E;
+font-size:18px;
+}
+
+/* TEXT */
+
+.process-card p{
+color:#555;
+font-size:14px;
+line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+.process-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.process-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+<section class="platform-section" id="platform">
+
+<div class="platform-container">
+
+<h2 class="platform-title">SmartPayPlatform Capabilities</h2>
+
+<div class="platform-divider"></div>
+
+<p class="platform-sub">
+SmartPayPlatform transforms payment systems into a real-time,
+AI-powered fraud intelligence platform for fintech companies
+and high-volume digital businesses.
+</p>
+
+
+<div class="platform-grid">
+
+<!-- CARD 1 -->
+<div class="platform-card">
+
+<img src="sm5.png" class="platform-img">
+
+<h3>Real-Time Transaction Monitoring</h3>
+
+<p class="short-text">
+Monitor transactions instantly across systems.
+</p>
+
+<p class="more-text">
+SmartPayPlatform continuously analyzes transaction streams in real time,
+detecting anomalies using behavioural patterns, device intelligence,
+and transaction attributes before fraud occurs.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="platform-card">
+
+<img src="sm6.png" class="platform-img">
+
+<h3>Predictive Fraud Risk Scoring</h3>
+
+<p class="short-text">
+Stop fraud before payment approval.
+</p>
+
+<p class="more-text">
+Each transaction is assigned a predictive risk score before authorisation,
+allowing businesses to block, verify, or approve payments proactively.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="platform-card">
+
+<img src="sm7.png" class="platform-img">
+
+<h3>Multi-Provider Integration</h3>
+
+<p class="short-text">
+Unify monitoring across payment systems.
+</p>
+
+<p class="more-text">
+Integrates with multiple PSPs, APIs, and gateways, enabling centralized
+fraud monitoring across all payment channels without replacing infrastructure.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 4 -->
+<div class="platform-card">
+
+<img src="sm8.png" class="platform-img">
+
+<h3>Automated Fraud Workflows</h3>
+
+<p class="short-text">
+Reduce manual investigation effort.
+</p>
+
+<p class="more-text">
+Automates fraud investigation processes, prioritizes high-risk cases,
+and improves operational efficiency for fraud and compliance teams.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 5 -->
+<div class="platform-card">
+
+<img src="sm9.png" class="platform-img">
+
+<h3>Compliance & Audit Reporting</h3>
+
+<p class="short-text">
+Stay aligned with regulations.
+</p>
+
+<p class="more-text">
+Generates audit-ready reports aligned with FCA, PSD2, and GDPR,
+ensuring full compliance and traceability of fraud decisions.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+<!-- CARD 6 -->
+<div class="platform-card">
+
+<img src="sm10.png" class="platform-img">
+
+<h3>Fraud Analytics Dashboard</h3>
+
+<p class="short-text">
+Gain real-time insights and trends.
+</p>
+
+<p class="more-text">
+Interactive dashboards provide fraud metrics, trends, and insights,
+helping businesses optimise fraud detection strategies and reduce losses.
+</p>
+
+<button class="learn-btn">Learn More</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.platform-section{
+padding:120px 8%;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+color:white;
+}
+
+/* TITLE */
+
+.platform-title{
+font-size:38px;
+margin-bottom:10px;
+}
+
+/* DIVIDER */
+
+.platform-divider{
+width:90px;
+height:4px;
+background:white;
+margin:10px auto 20px;
+border-radius:3px;
+}
+
+/* SUBTEXT */
+
+.platform-sub{
+max-width:650px;
+margin:auto;
+margin-bottom:60px;
+line-height:1.6;
+color:#D9F6FF;
+}
+
+/* GRID */
+
+.platform-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+/* CARD */
+
+.platform-card{
+background:white;
+color:#333;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+text-align:left;
+}
+
+.platform-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+
+.platform-img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+/* TEXT */
+
+.platform-card h3{
+margin-bottom:8px;
+color:#033E3E;
+}
+
+.short-text{
+color:#555;
+margin-bottom:10px;
+}
+
+.more-text{
+display:none;
+font-size:14px;
+color:#555;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+/* BUTTON */
+
+.learn-btn{
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+.learn-btn:hover{
+background:#045F5F;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+.platform-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+
+<script>
+
+const buttons = document.querySelectorAll(".learn-btn");
+
+buttons.forEach(btn => {
+
+btn.addEventListener("click", function(){
+
+const card = this.parentElement;
+const more = card.querySelector(".more-text");
+
+if(more.style.display === "block"){
+
+more.style.display = "none";
+this.innerText = "Learn More";
+
+}else{
+
+more.style.display = "block";
+this.innerText = "Show Less";
+
+}
+
+});
+
+});
+
+</script>
+<section class="pricing-section" id="pricing">
+
+<div class="pricing-container">
+
+<h2 class="pricing-title">SmartPayPlatform Pricing</h2>
+
+<div class="title-divider"></div>
+
+<p class="pricing-sub">
+Flexible SaaS pricing designed for fintech companies, payment providers,
+and digital businesses to detect fraud in real time, reduce risk, and
+maintain compliance without complex infrastructure.
+</p>
+
+
+<div class="pricing-grid">
+
+<!-- STARTER -->
+
+<div class="pricing-card">
+
+<h3>Starter</h3>
+
+<p class="price">£999 / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Real-Time Transaction Monitoring</li>
+<li><span class="tick">✓</span> Basic Fraud Risk Scoring</li>
+<li><span class="tick">✓</span> Single Payment Integration</li>
+<li><span class="tick">✓</span> Standard Dashboard Access</li>
+<li><span class="tick">✓</span> Email Support</li>
+</ul>
+
+<button onclick="selectPlan('Starter')">Start Starter</button>
+
+</div>
+
+
+<!-- GROWTH -->
+
+<div class="pricing-card pro-card">
+
+<div class="pro-badge">Most Popular</div>
+
+<h3>Growth</h3>
+
+<p class="price">£1,999 / month</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Everything in Starter</li>
+<li><span class="tick">✓</span> Predictive Fraud Scoring</li>
+<li><span class="tick">✓</span> Multi-PSP Integration</li>
+<li><span class="tick">✓</span> Automated Fraud Workflows</li>
+<li><span class="tick">✓</span> Compliance Reporting (FCA, PSD2, GDPR)</li>
+</ul>
+
+<button onclick="selectPlan('Growth')">Start Growth</button>
+
+</div>
+
+
+<!-- ENTERPRISE -->
+
+<div class="pricing-card">
+
+<h3>Enterprise</h3>
+
+<p class="price">Custom Pricing</p>
+
+<div class="card-divider"></div>
+
+<ul>
+<li><span class="tick">✓</span> Full AI Fraud Intelligence Engine</li>
+<li><span class="tick">✓</span> Cross-Platform Payment Monitoring</li>
+<li><span class="tick">✓</span> Advanced Analytics & Dashboards</li>
+<li><span class="tick">✓</span> Dedicated Compliance & Audit Tools</li>
+<li><span class="tick">✓</span> API Access & Custom Integrations</li>
+<li><span class="tick">✓</span> Dedicated Support & Onboarding</li>
+</ul>
+
+<button onclick="selectPlan('Enterprise')">Contact Sales</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.pricing-section{
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+}
+
+/* TITLE */
+
+.pricing-title{
+font-size:38px;
+color:#033E3E;
+margin-bottom:8px;
+}
+
+/* DIVIDER */
+
+.title-divider{
+width:80px;
+height:4px;
+margin:10px auto 20px;
+background:#008080;
+border-radius:3px;
+}
+
+.pricing-sub{
+color:#3C565B;
+margin-bottom:60px;
+}
+
+/* GRID */
+
+.pricing-grid{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.pricing-card{
+background:white;
+padding:40px 30px;
+border-radius:12px;
+border:1px solid #e6e6e6;
+transition:0.3s;
+position:relative;
+}
+
+.pricing-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* PRO CARD */
+
+.pro-card{
+border:2px solid #008080;
+transform:scale(1.05);
+}
+
+/* BADGE */
+
+.pro-badge{
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%);
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+color:white;
+font-size:12px;
+padding:6px 18px;
+border-radius:20px;
+}
+
+/* PRICE */
+
+.price{
+margin:15px 0 10px;
+font-size:22px;
+font-weight:600;
+color:#045F5F;
+}
+
+/* DIVIDER */
+
+.card-divider{
+height:2px;
+width:60px;
+margin:15px auto 20px;
+background:#008080;
+border-radius:2px;
+}
+
+/* LIST */
+
+.pricing-card ul{
+list-style:none;
+padding:0;
+margin-bottom:25px;
+text-align:left;
+}
+
+.pricing-card li{
+margin:10px 0;
+color:#444;
+font-size:14px;
+}
+
+/* TICK */
+
+.tick{
+color:#008080;
+font-weight:bold;
+margin-right:8px;
+}
+
+/* BUTTON */
+
+.pricing-card button{
+padding:12px 24px;
+border:none;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.pricing-card button:hover{
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+transform:translateY(-2px);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.pricing-grid{
+grid-template-columns:1fr;
+}
+
+.pro-card{
+transform:none;
+}
+
+}
+
+</style>
+
+
+<script>
+
+function selectPlan(plan){
+
+alert("Selected plan: " + plan);
+
+document.getElementById("contact").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+</script>
+<section class="faq-section" id="faq">
+
+<div class="faq-container">
+
+<h2 class="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-divider"><span>◆</span></div>
+
+<p class="faq-sub">
+Learn how SmartPayPlatform helps fintech companies and digital businesses
+detect fraud in real time, reduce risk, and optimise payment performance.
+</p>
+
+
+<div class="faq-list">
+
+<!-- FAQ 1 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What is SmartPayPlatform?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+SmartPayPlatform is an AI-driven fraud detection and payment optimisation
+platform designed for fintech companies and high-volume digital businesses.
+It provides real-time transaction monitoring and predictive fraud scoring
+before payments are authorised.
+</p>
+</div>
+</div>
+
+<!-- FAQ 2 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>What problem does the platform solve?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Many businesses rely on static or rule-based fraud systems that detect fraud
+only after transactions occur. SmartPayPlatform identifies risk before
+authorisation, helping prevent financial loss and reduce chargebacks.
+</p>
+</div>
+</div>
+
+<!-- FAQ 3 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>How does fraud detection work?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+The platform uses machine learning models to analyse transaction behaviour,
+device data, and historical patterns in real time. Each transaction is assigned
+a risk score, allowing businesses to approve, block, or verify payments instantly.
+</p>
+</div>
+</div>
+
+<!-- FAQ 4 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>Who is SmartPayPlatform designed for?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+SmartPayPlatform is built for fintech companies, payment service providers,
+online platforms, and businesses handling high volumes of digital transactions.
+</p>
+</div>
+</div>
+
+<!-- FAQ 5 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>Does the platform support compliance?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Yes. SmartPayPlatform provides automated compliance reporting aligned with
+regulatory frameworks such as FCA, PSD2, and GDPR, ensuring audit-ready records.
+</p>
+</div>
+</div>
+
+<!-- FAQ 6 -->
+<div class="faq-item">
+<div class="faq-question">
+<span>Can SmartPayPlatform scale across multiple systems?</span>
+<button class="toggle">+</button>
+</div>
+<div class="faq-answer">
+<p>
+Yes. The platform integrates with multiple payment providers and APIs,
+allowing businesses to monitor transactions across different systems in
+one unified dashboard.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.faq-section{
+padding:120px 8%;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+/* TITLE */
+
+.faq-title{
+text-align:center;
+color:white;
+font-size:36px;
+margin-bottom:10px;
+}
+
+/* SUBTEXT */
+
+.faq-sub{
+text-align:center;
+color:#CFEFEF;
+margin-bottom:45px;
+}
+
+/* DIVIDER */
+
+.faq-divider{
+display:flex;
+align-items:center;
+margin:14px 0 30px 0;
+}
+
+.faq-divider::before,
+.faq-divider::after{
+content:"";
+flex:1;
+height:1px;
+background:rgba(255,255,255,0.3);
+}
+
+.faq-divider span{
+color:white;
+font-size:14px;
+padding:0 10px;
+}
+
+/* LIST */
+
+.faq-list{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+/* CARD */
+
+.faq-item{
+background:white;
+border-radius:10px;
+padding:18px 20px;
+transition:0.3s;
+}
+
+/* HOVER */
+
+.faq-item:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* QUESTION */
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+color:#033E3E;
+font-size:16px;
+font-weight:600;
+}
+
+/* BUTTON */
+
+.toggle{
+background:#008080;
+border:none;
+color:white;
+font-size:18px;
+width:32px;
+height:32px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* ANSWER */
+
+.faq-answer{
+display:none;
+margin-top:12px;
+}
+
+.faq-answer p{
+color:#3C565B;
+line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+.faq-title{
+font-size:28px;
+}
+}
+
+</style>
+
+
+<script>
+
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(q=>{
+
+q.addEventListener("click",()=>{
+
+const answer = q.nextElementSibling;
+const btn = q.querySelector(".toggle");
+
+if(answer.style.display === "block"){
+
+answer.style.display = "none";
+btn.innerHTML = "+";
+
+}else{
+
+document.querySelectorAll(".faq-answer").forEach(a=>{
+a.style.display = "none";
+});
+
+document.querySelectorAll(".toggle").forEach(b=>{
+b.innerHTML = "+";
+});
+
+answer.style.display = "block";
+btn.innerHTML = "−";
+
+}
+
+});
+
+});
+
+</script>
+
+<section class="contact-section" id="contact">
+
+<div class="contact-container">
+
+<!-- LEFT SIDE -->
+
+<div class="contact-left">
+
+<h2>Contact SmartPayPlatform Team</h2>
+
+<div class="contact-divider"></div>
+
+<p class="contact-text">
+Have questions about SmartPayPlatform or want to explore how our AI-driven
+fraud detection and payment optimisation platform can support your business?
+
+Our team is ready to help fintech companies, payment providers, and
+digital businesses reduce fraud risk and improve transaction efficiency.
+</p>
+
+<!-- CONTACT INFO BOX -->
+
+<div class="info-box">
+
+<div class="contact-item">
+<div>
+<h3>Phone</h3>
+<p>+44 7388285438</p>
+</div>
+</div>
+
+<div class="contact-item">
+<div>
+<h3>Email</h3>
+<p>smartpayplatform@outlook.com</p>
+</div>
+</div>
+
+<div class="contact-item">
+<div>
+<h3>Location</h3>
+<p>United Kingdom</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE FORM -->
+
+<div class="contact-right">
+
+<form class="contact-form"
+action="https://api.web3forms.com/submit"
+method="POST">
+
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="tel" name="phone" placeholder="Phone Number">
+
+<textarea name="message" rows="4" placeholder="Write your message"></textarea>
+
+<button type="submit">Send Message</button>
+
+<p class="note">
+Our team will respond within 24 hours.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+/* SECTION */
+
+.contact-section{
+padding:120px 8%;
+background:white;
+font-family:'Segoe UI',sans-serif;
+}
+
+/* CONTAINER */
+
+.contact-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+/* LEFT */
+
+.contact-left h2{
+font-size:38px;
+color:#033E3E;
+margin-bottom:10px;
+}
+
+/* DIVIDER (YOUR COLOR) */
+
+.contact-divider{
+width:80px;
+height:4px;
+background:#008080;
+margin-bottom:20px;
+border-radius:3px;
+}
+
+/* TEXT */
+
+.contact-text{
+color:#3C565B;
+line-height:1.8;
+margin-bottom:35px;
+max-width:480px;
+}
+
+/* INFO BOX */
+
+.info-box{
+background:#F4FBFB;
+border-left:4px solid #008080;
+padding:25px;
+border-radius:12px;
+display:flex;
+flex-direction:column;
+gap:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* CONTACT ITEM */
+
+.contact-item h3{
+font-size:15px;
+color:#033E3E;
+margin-bottom:3px;
+}
+
+.contact-item p{
+font-size:14px;
+color:#4C787E;
+}
+
+/* FORM */
+
+.contact-form{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+/* INPUT */
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+outline:none;
+transition:0.3s;
+width:100%;
+}
+
+/* INPUT FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+border-color:#008080;
+box-shadow:0 0 0 2px rgba(0,128,128,0.15);
+}
+
+/* BUTTON */
+
+.contact-form button{
+margin-top:10px;
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+color:white;
+border:none;
+padding:14px;
+font-weight:600;
+letter-spacing:1px;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
+}
+
+.contact-form button:hover{
+background:#045F5F;
+transform:translateY(-2px);
+}
+
+/* NOTE */
+
+.note{
+font-size:12px;
+color:#5E7D7E;
+margin-top:6px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.contact-section{
+padding:80px 6%;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+gap:40px;
+text-align:center;
+}
+
+.contact-left h2{
+font-size:30px;
+}
+
+.contact-text{
+margin:auto;
+max-width:100%;
+}
+
+.info-box{
+max-width:350px;
+margin:auto;
+text-align:left;
+}
+
+.contact-form{
+padding:30px;
+}
+
+}
+
+</style>
+
+
+<script>
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function(){
+alert("Your message has been sent successfully! Our team will contact you soon.");
+});
+</script>
+<!-- FOOTER START -->
+
+<style>
+
+.footer{
+background:
+linear-gradient(
+135deg,
+#033E3E 0%,
+#045D5D 12%,
+#045F5F 24%,
+#007C80 36%,
+#008080 48%,
+#307D7E 60%,
+#3C565B 72%,
+#4C787E 84%,
+#5E7D7E 100%
+);
+
+color:white;
+padding:60px 8% 25px;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+/* CONTAINER */
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr;
+gap:40px;
+}
+
+/* LEFT */
+.footer-left h3{
+font-size:22px;
+margin-bottom:12px;
+color:white;
+}
+
+.footer-left p{
+font-size:14px;
+line-height:1.7;
+color:#CFEFEF;
+}
+
+/* LINKS */
+.footer-links h4{
+margin-bottom:12px;
+font-size:15px;
+color:white;
+}
+
+.footer-links a{
+display:block;
+text-decoration:none;
+color:#AEEEEE;
+margin-bottom:8px;
+font-size:14px;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:white;
+padding-left:4px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+max-width:1100px;
+margin:35px auto 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:15px;
+font-size:13px;
+}
+
+/* BUTTON */
+.top-btn{
+background:#008080;
+border:none;
+color:white;
+width:36px;
+height:36px;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+transition:0.3s;
+}
+
+.top-btn:hover{
+background:#045F5F;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-bottom{
+flex-direction:column;
+gap:10px;
+}
+
+}
+</style>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<!-- LEFT -->
+<div class="footer-left">
+
+<h3>SmartPayPlatform</h3>
+
+<p>
+SmartPayPlatform is an AI-driven fraud detection and payment optimisation platform 
+built for fintech companies, payment service providers, and high-volume digital businesses.
+
+It enables real-time transaction monitoring, predictive fraud scoring before authorisation, 
+and automated compliance reporting to reduce financial risk and improve operational efficiency.
+</p>
+
+</div>
+
+<!-- CENTER -->
+<div class="footer-links">
+
+<h4>Platform</h4>
+
+<a href="#home">Home</a>
+<a href="#platform">Platform</a>
+<a href="#process">How It Works</a>
+<a href="#pricing">Pricing</a>
+
+</div>
+
+<!-- RIGHT -->
+<div class="footer-links">
+
+<h4>Company</h4>
+
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="footer-bottom">
+
+<p>© 2026 SmartPayPlatform. All rights reserved.</p>
+
+<button class="top-btn" onclick="scrollToTop()">↑</button>
+
+</div>
+
+</footer>
+
+<script>
+function scrollToTop(){
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+}
+</script>
+
+<!-- FOOTER END -->
+
+</body>
+</html>
+
